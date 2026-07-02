@@ -52,6 +52,10 @@ Built on [`playwright-core`](https://playwright.dev). macOS-first (Keychain vaul
 
 Requires **Node ≥ 20** (≥ 22.5 for browsing-history recall) and **Google Chrome** (falls back to `CHROMIUM_PATH` or Playwright's bundled Chromium).
 
+> **Not on npm yet.** Install straight from GitHub — a `prepare` script builds the
+> package automatically on install, so the `github:` forms below work today. The
+> `@vzt-protocol/vzt-browser` name will work once it's published.
+
 ### As an MCP server
 
 Add to your MCP client config (`.mcp.json`, `claude_desktop_config.json`, Cursor, etc.):
@@ -61,11 +65,22 @@ Add to your MCP client config (`.mcp.json`, `claude_desktop_config.json`, Cursor
   "mcpServers": {
     "vzt-browser": {
       "command": "npx",
-      "args": ["-y", "@vzt-protocol/vzt-browser"],
+      "args": ["-y", "github:vonzelle-vzt/vzt-browser"],
       "env": { "VZT_BROWSER_APPROVAL": "auto" }
     }
   }
 }
+```
+
+### As a dependency / global CLI
+
+```bash
+# into a project
+npm install github:vonzelle-vzt/vzt-browser
+
+# or globally, to get the vzt-browser / vzt-browser-cli / vzt-browser-vault binaries
+npm install -g github:vonzelle-vzt/vzt-browser
+vzt-browser-cli --help
 ```
 
 ### From source
@@ -73,8 +88,7 @@ Add to your MCP client config (`.mcp.json`, `claude_desktop_config.json`, Cursor
 ```bash
 git clone https://github.com/vonzelle-vzt/vzt-browser.git
 cd vzt-browser
-npm install
-npm run build
+npm install            # runs the build automatically (prepare script)
 # MCP server:  node dist/index.js
 # CLI:         node dist/cli.js --help   (or: npm link  →  vzt-browser-cli)
 ```

@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "prepare": "tsc",
     "dev": "tsc --watch",
     "start": "node dist/index.js",
     "cli": "node dist/cli.js",
