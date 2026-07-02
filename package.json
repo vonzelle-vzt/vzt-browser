@@ -1,0 +1,62 @@
+{
+  "name": "@vzt-protocol/vzt-browser",
+  "version": "1.0.0",
+  "description": "VZT-Browser — Aside-class browser agent MCP server. Persistent logged-in Chrome profiles, per-domain site memory, Keychain credential vault (secrets never enter LLM context), approval gates, action record/replay, session recording.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "vzt-browser": "./dist/index.js",
+    "vzt-browser-cli": "./dist/cli.js",
+    "vzt-browser-vault": "./dist/vault-cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "cli": "node dist/cli.js",
+    "repl": "node dist/cli.js repl",
+    "vault": "node dist/vault-cli.js",
+    "clean": "rm -rf dist"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "mcp",
+    "browser-agent",
+    "playwright",
+    "browser-automation",
+    "vzt-protocol",
+    "aside-alternative",
+    "persistent-profile",
+    "credential-vault",
+    "site-memory",
+    "record-replay",
+    "approval-gates"
+  ],
+  "author": "VZT Protocol Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vonzelle-vzt/vzt-browser.git"
+  },
+  "homepage": "https://github.com/vonzelle-vzt/vzt-browser#readme",
+  "bugs": {
+    "url": "https://github.com/vonzelle-vzt/vzt-browser/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.16.0",
+    "playwright-core": "^1.53.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
