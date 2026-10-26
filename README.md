@@ -50,7 +50,7 @@ Built on [`playwright-core`](https://playwright.dev). macOS-first (Keychain vaul
 
 ## Install
 
-Requires **Node ≥ 20** (≥ 22.5 for browsing-history recall) and **Google Chrome** (falls back to `CHROMIUM_PATH` or Playwright's bundled Chromium).
+Requires **Node ≥ 22** (≥ 22.5 for browsing-history recall) and **Google Chrome** (falls back to `CHROMIUM_PATH` or Playwright's bundled Chromium).
 
 > **Not on npm yet.** Install straight from GitHub — a `prepare` script builds the
 > package automatically on install, so the `github:` forms below work today. The
