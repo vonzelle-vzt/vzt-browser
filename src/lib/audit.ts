@@ -7,7 +7,7 @@
 import { appendFileSync } from "node:fs";
 import { AUDIT_LOG, ROOT_DIR, ensureDir } from "./paths.js";
 
-export interface AuditEntry {
+interface AuditEntry {
   ts?: string;
   kind: "vault_read" | "vault_add" | "vault_fill" | "approval" | "replay";
   outcome: "ok" | "denied" | "error";

@@ -287,7 +287,7 @@ server.tool(
 server.tool(
   "research_upsert_row",
   "Add/replace a row in an evidence table (matched on the key field). You supply the extracted field values + status; dateAccessed auto-stamps.",
-  { table: z.string(), row: z.record(z.string()) },
+  { table: z.string(), row: z.record(z.string(), z.string()) },
   wrap(async (p) => {
     const t = upsertRow(p.table, p.row);
     return { rows: t.rows.length };
@@ -369,7 +369,7 @@ server.tool("task_delete", "Delete a saved task.", { task: z.string() },
 server.tool(
   "replay_task",
   "Deterministically replay a saved task — no LLM needed on the happy path (sub-second per step). Approval gates still fire. On page drift it stops and returns the failure point + a snapshot so you can finish manually and re-save.",
-  { task: z.string(), params: z.record(z.string()).default({}) },
+  { task: z.string(), params: z.record(z.string(), z.string()).default({}) },
   wrap(async (p) => {
     const task = getTask(p.task);
     if (!task) throw new Error(`No saved task "${p.task}". See task_list.`);

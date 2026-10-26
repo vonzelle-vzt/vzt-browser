@@ -9,7 +9,7 @@
 
 import type { Locator, Page } from "playwright-core";
 
-export interface RefNode {
+interface RefNode {
   ref: string;
   role: string;
   name: string;

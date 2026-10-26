@@ -10,7 +10,7 @@
 import type { Locator, Page } from "playwright-core";
 import { annotateRefs, isVztRef, refLocator, renderRefList } from "./refs.js";
 
-export interface SnapshotResult {
+interface SnapshotResult {
   snapshot: string;
   refs: string;
   hasRefs: boolean;

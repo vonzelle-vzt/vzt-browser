@@ -9,7 +9,7 @@
 
 import type { Page } from "playwright-core";
 
-export interface MonitorResult {
+interface MonitorResult {
   triggered: boolean;
   reason: string;
   checks: number;

@@ -21,7 +21,7 @@ const NAME_KEYWORDS = [
   "post", "publish", "tweet", "reply all",
 ];
 
-export interface SensitivityVerdict {
+interface SensitivityVerdict {
   sensitive: boolean;
   reason: string;
 }

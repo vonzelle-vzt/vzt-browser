@@ -13,7 +13,7 @@ import type { BrowserContext, Page } from "playwright-core";
 import { PROFILES_DIR, SESSIONS_DIR, ensureDir } from "./paths.js";
 import { attachContextCapture, setCaptureSession } from "./capture.js";
 
-export interface SessionState {
+interface SessionState {
   context: BrowserContext;
   page: Page;
   sessionId: string;
@@ -66,7 +66,7 @@ function newSessionId(): string {
   return `${stamp}-${Math.random().toString(36).slice(2, 8)}`;
 }
 
-export interface StartOptions {
+interface StartOptions {
   profile?: string;
   headed?: boolean;
   video?: boolean;
