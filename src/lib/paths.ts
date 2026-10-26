@@ -24,7 +24,7 @@ export const MEMORY_DIR = join(ROOT_DIR, "memory");
 export const TASKS_DIR = join(ROOT_DIR, "tasks");
 export const SESSIONS_DIR = join(ROOT_DIR, "sessions");
 export const AUDIT_LOG = join(ROOT_DIR, "audit.log");
-export const CONFIG_FILE = join(ROOT_DIR, "config.json");
+const CONFIG_FILE = join(ROOT_DIR, "config.json");
 export const VAULT_INDEX = join(ROOT_DIR, "vault-index.json");
 export const VAULT_DOMAINS = join(ROOT_DIR, "vault-domains.json");
 
@@ -33,7 +33,7 @@ export function ensureDir(dir: string): string {
   return dir;
 }
 
-export interface VztBrowserConfig {
+interface VztBrowserConfig {
   /** Domains where every mutating action requires approval. */
   alwaysAskDomains: string[];
   /** Extra sensitive keywords merged into the built-in lists. */

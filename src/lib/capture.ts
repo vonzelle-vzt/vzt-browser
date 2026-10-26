@@ -10,20 +10,20 @@ import { join } from "node:path";
 import type { BrowserContext, Download, Page } from "playwright-core";
 import { ensureDir } from "./paths.js";
 
-export interface ConsoleEntry {
+interface ConsoleEntry {
   type: string;
   text: string;
   url?: string;
   ts: string;
 }
-export interface NetworkEntry {
+interface NetworkEntry {
   method: string;
   url: string;
   status: number;
   ok: boolean;
   ts: string;
 }
-export interface DownloadEntry {
+interface DownloadEntry {
   url: string;
   filename: string;
   path: string;
@@ -50,7 +50,7 @@ export function setCaptureSession(sessionDir: string): void {
   downloads = [];
 }
 
-export function attachCapture(page: Page): void {
+function attachCapture(page: Page): void {
   if (attached.has(page)) return;
   attached.add(page);
 

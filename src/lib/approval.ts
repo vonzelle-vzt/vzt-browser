@@ -13,7 +13,7 @@ import { audit } from "./audit.js";
 
 const execFileAsync = promisify(execFile);
 
-export interface ApprovalRequest {
+interface ApprovalRequest {
   action: string; // e.g. 'click "Place order"'
   url: string;
   reason: string;

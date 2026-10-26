@@ -14,7 +14,7 @@ import { PROFILES_DIR } from "./paths.js";
 
 const require = createRequire(import.meta.url);
 
-export interface HistoryHit {
+interface HistoryHit {
   url: string;
   title: string;
   visitCount: number;

@@ -19,9 +19,9 @@ const TABLES_DIR = join(ROOT_DIR, "research");
 /** The Aside default evidence schema — enough for a useful first pass. */
 export const DEFAULT_FIELDS = ["claim", "sourceUrl", "publisher", "dateAccessed", "screenshot", "status", "oldClaim"];
 
-export type Row = Record<string, string>;
+type Row = Record<string, string>;
 
-export interface EvidenceTable {
+interface EvidenceTable {
   name: string;
   fields: string[];
   /** Field used to match rows across runs for drift (default "sourceUrl"). */
@@ -116,7 +116,7 @@ export function upsertRow(name: string, row: Row): EvidenceTable {
   return table;
 }
 
-export interface DriftReport {
+interface DriftReport {
   changed: Array<{ key: string; field: string; from: string; to: string }>;
   missing: Array<{ key: string; value: string }>;
   added: Array<{ key: string; value: string }>;

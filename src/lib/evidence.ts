@@ -18,7 +18,7 @@ import { getText } from "./actions.js";
 
 export type EvidenceTemplate = "generic" | "ci-triage" | "pr-packet" | "qa" | "flag-audit" | "incident";
 
-export interface EvidencePage {
+interface EvidencePage {
   label?: string;
   url?: string;
   viewport?: { width: number; height: number } | "desktop" | "mobile" | "tablet";
@@ -39,7 +39,7 @@ const TEMPLATE_HEADINGS: Record<EvidenceTemplate, string[]> = {
   incident: ["Monitor that changed", "Time window", "Log / trace links", "Top failing endpoint", "Likely blast radius", "Action left for a human"],
 };
 
-export interface EvidenceResult {
+interface EvidenceResult {
   notePath: string;
   note: string;
   dir: string;

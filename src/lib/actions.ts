@@ -25,7 +25,7 @@ function assertReadWrite(action: string): void {
   }
 }
 
-export interface ActionResult {
+interface ActionResult {
   ok: boolean;
   denied?: boolean;
   url: string;

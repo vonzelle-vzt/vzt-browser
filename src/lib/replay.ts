@@ -17,7 +17,7 @@ import { audit } from "./audit.js";
 
 const DRIFT_TIMEOUT = 5_000;
 
-export interface ReplayResult {
+interface ReplayResult {
   ok: boolean;
   task: string;
   completedSteps: number;
